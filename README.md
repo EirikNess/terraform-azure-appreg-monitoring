@@ -103,6 +103,6 @@ New-MgServicePrincipalAppRoleAssignment `
 
 ```
 
-"" Note
+## Note
 
 Inspired by [Use Azure Logic Apps to Notify of Pending AAD Application Client Secrets and Certificate Expirations](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/use-azure-logic-apps-to-notify-of-pending-aad-application-client/ba-p/3014603)  
