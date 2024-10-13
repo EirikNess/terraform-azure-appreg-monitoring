@@ -51,7 +51,6 @@ data "azurerm_client_config" "current" {}
 module "monitor_appreg" {
     environment = "contoso"
     subscription_id = data.azurerm_client_config.current.subscription_id
-    subscription_id = data.azurerm_client_config.current.subscription_id
     resource_location = "norwayeast"
     data_location = "Norway"
     logic_app_trigger_recurrence_frequency = "Week"
@@ -102,7 +101,6 @@ New-MgServicePrincipalAppRoleAssignment `
     -ResourceId $graph.Id
 
 ```
-
 
 ### Registration of Resource Provider
 
@@ -155,9 +153,6 @@ the required resource provider "Microsoft.Communication" will in some cases not 
 | <a name="input_logic_app_trigger_get_future_time_interval"></a> [logic\_app\_trigger\_get\_future\_time\_interval](#input\_logic\_app\_trigger\_get\_future\_time\_interval) | The limit interval of credentials being alerted | `number` | `1` | no |
 | <a name="input_logic_app_trigger_get_future_time_time_unit"></a> [logic\_app\_trigger\_get\_future\_time\_time\_unit](#input\_logic\_app\_trigger\_get\_future\_time\_time\_unit) | The limit unit of credentials being alerted | `string` | `Month` | no |
 | <a name="input_email_subject"></a> [email\_subject](#input\_email\_subject) | The subject of the email being sent | `string` | `List of Secrets and Certificates near expiration` | no |
-
-
-
 
 ## Note
 
