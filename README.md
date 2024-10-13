@@ -108,28 +108,28 @@ the required resource provider "Microsoft.Communication" will in some cases not 
 
 ## Resources
 
-| Name | Type |
-|------|------|
-| [random_string.main](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
-| [azurerm_resource_group.main](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group) | resource |
-| [azurerm_email_communication_service.main](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/email_communication_service) | resource |
-| [azapi_resource.domain](https://registry.terraform.io/providers/Azure/azapi/latest/docs/resources/resource) | resource |
-| [azapi_resource.communication_services](https://registry.terraform.io/providers/Azure/azapi/latest/docs/resources/resource) | resource |
-| [azurerm_api_connection.main](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/api_connection) | resource |
-| [azurerm_logic_app_workflow.main](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/logic_app_workflow) | resource |
-| [azurerm_logic_app_trigger_recurrence.recurrence](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/logic_app_trigger_recurrence) | resource |
-| [azurerm_logic_app_action_custom.initialize_appid](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/logic_app_trigger_custom) | resource |
-| [azurerm_logic_app_action_custom.initialize_displayname](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/logic_app_trigger_custom) | resource |
-| [azurerm_logic_app_action_custom.initialize_passwordcredential](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/logic_app_trigger_custom) | resource |
-| [azurerm_logic_app_action_custom.initialize_keycredential](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/logic_app_trigger_custom) | resource |
-| [azurerm_logic_app_action_custom.initialize_styles](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/logic_app_trigger_custom) | resource |
-| [azurerm_logic_app_action_custom.initialize_html](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/logic_app_trigger_custom) | resource |
-| [azurerm_logic_app_action_custom.initialize_emailneeded](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/logic_app_trigger_custom) | resource |
-| [azurerm_logic_app_action_custom.initialize_daystilexpiration](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/logic_app_trigger_custom) | resource |
-| [azurerm_logic_app_action_custom.initialize_nextlink](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/logic_app_trigger_custom) | resource |
-| [azurerm_logic_app_action_custom.until](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/logic_app_trigger_custom) | resource |
-| [azurerm_logic_app_action_custom.close_html_tags](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/logic_app_trigger_custom) | resource |
-| [azurerm_logic_app_action_custom.condition_emailneeded](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/logic_app_trigger_custom) | resource |
+| Name | Type | Default name if not overwritten by variables |
+|------|------|------|
+| [random_string.main](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource | `n/a` |
+| [azurerm_resource_group.main](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group) | resource | `rg-appregmonitoring< environment >` |
+| [azurerm_email_communication_service.main](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/email_communication_service) | resource | `ecs-appregmonitoring< environment >` |
+| [azapi_resource.domain](https://registry.terraform.io/providers/Azure/azapi/latest/docs/resources/resource) | resource | `n/a` |  
+| [azapi_resource.communication_services](https://registry.terraform.io/providers/Azure/azapi/latest/docs/resources/resource) | resource | `acs-appregmonitoring< environment >` |
+| [azurerm_api_connection.main](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/api_connection) | resource | `acsemail` |
+| [azurerm_logic_app_workflow.main](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/logic_app_workflow) | resource | `logic-appregmonitoring< environment>` |
+| [azurerm_logic_app_trigger_recurrence.recurrence](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/logic_app_trigger_recurrence) | resource | `n/a` |
+| [azurerm_logic_app_action_custom.initialize_appid](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/logic_app_trigger_custom) | resource | `n/a` |
+| [azurerm_logic_app_action_custom.initialize_displayname](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/logic_app_trigger_custom) | resource | `n/a` |
+| [azurerm_logic_app_action_custom.initialize_passwordcredential](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/logic_app_trigger_custom) | resource | `n/a` |
+| [azurerm_logic_app_action_custom.initialize_keycredential](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/logic_app_trigger_custom) | resource | `n/a` |
+| [azurerm_logic_app_action_custom.initialize_styles](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/logic_app_trigger_custom) | resource | `n/a` |
+| [azurerm_logic_app_action_custom.initialize_html](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/logic_app_trigger_custom) | resource | `n/a` |
+| [azurerm_logic_app_action_custom.initialize_emailneeded](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/logic_app_trigger_custom) | resource | `n/a` |
+| [azurerm_logic_app_action_custom.initialize_daystilexpiration](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/logic_app_trigger_custom) | resource | `n/a` |
+| [azurerm_logic_app_action_custom.initialize_nextlink](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/logic_app_trigger_custom) | resource | `n/a` |
+| [azurerm_logic_app_action_custom.until](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/logic_app_trigger_custom) | resource | `n/a` |
+| [azurerm_logic_app_action_custom.close_html_tags](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/logic_app_trigger_custom) | resource | `n/a` |
+| [azurerm_logic_app_action_custom.condition_emailneeded](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/logic_app_trigger_custom) | resource | `n/a` |
 
 ## Inputs
 
