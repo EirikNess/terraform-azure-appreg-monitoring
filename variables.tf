@@ -3,6 +3,30 @@ variable "environment" {
   type        = string
 }
 
+variable "subscription_id" {
+  type        = string
+  description = "Subscription id used when referencing to the API-Connection in the Logic App Workflow"
+}
+
+variable "resource_location" {
+  description = "The location of Resource Group and Logic App"
+  type        = string
+}
+
+variable "data_location" {
+  description = "The location where the Communication service store its data at rest."
+  type        = string
+  validation {
+    condition     = contains(["Africa", "Asia Pacific", "Australia", "Brazil", "Canada", "Europe", "France", "Germany", "India", "Japan", "Korea", "Norway", " Switzerland", "UAE", "UK", "United States"], var.data_location)
+    error_message = "Valid value is one of the following: Africa, Asia Pacific, Australia, Brazil, Canada, Europe, France, Germany, India, Japan, Korea, Norway, Switzerland, UAE, UK, United States"
+  }
+}
+
+variable "email_recipients" {
+  description = "List of email recipients"
+  type        = list(string)
+}
+
 variable "resource_group_name" {
   description = "The name of the Resource Group"
   type        = string
@@ -45,28 +69,10 @@ variable "logic_app_workflow_name" {
   default     = ""
 }
 
-variable "resource_location" {
-  description = "The location of Resource Group and Logic App"
-  type        = string
-}
-
 variable "communication_services_location" {
   description = "The geo-location where the communication services lives"
   type        = string
   default     = "global"
-}
-
-variable "data_location" {
-  description = "The location where the Communication service store its data at rest."
-  type        = string
-  validation {
-    condition     = contains(["Africa", "Asia Pacific", "Australia", "Brazil", "Canada", "Europe", "France", "Germany", "India", "Japan", "Korea", "Norway", " Switzerland", "UAE", "UK", "United States"], var.data_location)
-    error_message = "Valid value is one of the following: Africa, Asia Pacific, Australia, Brazil, Canada, Europe, France, Germany, India, Japan, Korea, Norway, Switzerland, UAE, UK, United States"
-  }
-}
-
-variable "subscription_id" {
-  description = "Subscription id used when referencing to the API-Connection in the Logic App Workflow"
 }
 
 variable "logic_app_trigger_recurrence_frequency" {
@@ -87,13 +93,13 @@ variable "logic_app_trigger_recurrence_interval" {
 
 variable "logic_app_trigger_get_future_time_interval" {
   description = "The limit interval of credentials being alerted"
-  type = number
-  default = 1
+  type        = number
+  default     = 1
 }
 
 variable "logic_app_trigger_get_future_time_time_unit" {
   description = "The limit unit of credentials being alerted"
-  type = string
+  type        = string
   validation {
     condition     = contains(["Month", "Week", "Day", "Hour", "Minute", "Second"], var.logic_app_trigger_get_future_time_time_unit)
     error_message = "Valid value is one of the following: Month, Week, Day, Hour, Minute, Second"
@@ -107,9 +113,6 @@ variable "email_subject" {
   default     = "List of Secrets and Certificates near expiration"
 }
 
-variable "email_recipients" {
-  description = "List of email recipients"
-  type        = list(string)
-}
+
 
 
