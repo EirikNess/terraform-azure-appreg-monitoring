@@ -103,6 +103,11 @@ New-MgServicePrincipalAppRoleAssignment `
 
 ```
 
+
+### Registration of Resource Provider
+
+the required resource provider "Microsoft.Communication" will in some cases not be registered when runnig terraform. To avoid errors, you may have to either manually register the provider via the Azure Portal or declare it in your condig.  
+
 ## Note
 
 Inspired by [Use Azure Logic Apps to Notify of Pending AAD Application Client Secrets and Certificate Expirations](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/use-azure-logic-apps-to-notify-of-pending-aad-application-client/ba-p/3014603)  
